@@ -1,0 +1,25 @@
+size: 0, 1, 2, 3
+sex: -1, 0, 1
+age: 0, 1, 2, 5, 10
+outdoorness: 0, 1, 2, 3
+fur: 0, 1, 2
+--
+paw_door,
+muffins,
+belly_trap,
+corners,
+boxes,
+contort,
+drools,
+sprints,
+veggie,
+sheets,
+men,
+toes,
+knocks,
+keyboard,
+stares,
+blep,
+faucet,
+food_freak,
+hind_legs
