@@ -1,6 +1,5 @@
 import numpy
-# from kmodes import kprototypes
-from kmodes import kmodes
+from kmodes import kmodes, kprototypes
 
 columns = [
     "size",
@@ -30,6 +29,7 @@ columns = [
 ]
 
 data = numpy.genfromtxt('data-clean.csv', delimiter=',', skip_header=1)
+data = numpy.array([row for row in data if not numpy.isnan(row).any()])
 
 km = kmodes.KModes(n_clusters=4, init='Huang', n_init=5, verbose=1)
 
@@ -37,6 +37,12 @@ clusters = km.fit_predict(data)
 
 # Print the cluster centroids
 print(km.cluster_centroids_)
+for i, cluster in enumerate(km.cluster_centroids_):
+    print "---"
+    print "Cluster", i
+    for j, value in enumerate(columns):
+        print value, ":", cluster[j]
+
 
 # kproto = kprototypes.KPrototypes(n_clusters=4, init='Cao', verbose=2)
 # clusters = kproto.fit_predict(data, categorical=range(5, 24))
